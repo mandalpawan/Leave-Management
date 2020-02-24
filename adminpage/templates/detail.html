@@ -1,0 +1,28 @@
+{% extends "admin_base.html" %}
+
+{% block content %}
+
+<h4>DESHBOARD</h4>
+<div class="row">
+
+  <div class="container">
+    <h4 style="background-color: #66c2ff;font-weight:550;">LEAVE DETAIL:</h4>
+    <div class="box">
+    <div class="form-group"></div>
+        Name: <input type="text" value="{{value1.user}}" readonly><br>
+        Catagory: <input type="text" value="{{value2.catagory}}" readonly>
+        Department: <input type="text"  value="{{value2.department}}" readonly ><br>
+        From: <input type="text" value="{{value1.holidayfrom}}" readonly>
+        To: <input type="text" value="{{value1.holidayto }}" readonly ><br>
+        Leave Type: <input type="text" value="{{value1.leave}}" readonly ><br>
+        Reason: <br>
+          <textarea class="form-control"  rows="8" cols="20" readonly>{{value1.detail}}</textarea><br>
+        <a href="{% url 'verified' value1.id %}"><button>Verify</button></a>
+        <a href="{% url 'logadmin' %}"><button>Back</button></a>
+    </div>
+    </div>
+    
+
+
+{% endblock content %}
+

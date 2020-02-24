@@ -1,0 +1,24 @@
+.profilelogo{
+    text-align: center;
+    color: #1a1a1a;
+}
+
+.selection{
+    padding-left: 100px;
+    padding-right: 100px;
+    width:50%;
+    text-align:center;
+    margin-left:10%;
+    background-color: #66c2ff;
+}
+.reason textarea{
+    width: 70%;
+}
+.detail{
+    font-size: 20px;
+}
+
+legend{
+    display: block;
+    border:1;
+}

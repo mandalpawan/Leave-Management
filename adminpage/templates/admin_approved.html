@@ -1,0 +1,43 @@
+{% extends "admin_base.html" %}
+
+{% block content %}
+
+<h4>DESHBOARD</h4>
+<div class="row">
+         
+  <div class="detail" style="width: 100%;margin-top:20px; font-size:14px;">
+      <h5>LATEST LEAVE APPLICATION</h5>
+      <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Empoyee Name</th>
+              <th scope="col">Leave Type</th>
+              <th scope="col">Posting Date</th>
+              <th scope="col">Reasons</th>
+              <th scope="col">Status</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for rows in datavalue %}
+            {% if rows.varify %}
+            <tr>
+              <th scope="row">#</th>
+              <td style="text-transform: uppercase;">{{rows.user}}</td>
+              <td>{{rows.leave}}</td>
+              <td>{{rows.publish_date}}</td>
+              <td>{{rows.detail}}</td>
+              <td><span style="color: green;">Approved</span></td>
+              <td><a style="color: black;" href="{% url 'detail' rows.id %}">Detail</a></td>
+            </tr>
+            {% endif %}
+            {% endfor %}
+          </tbody>
+        </table>
+      </table>
+  </div>
+  </div>
+
+
+{% endblock content %}

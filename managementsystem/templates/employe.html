@@ -1,0 +1,61 @@
+{% extends "home_base.html" %}
+{% block content %}
+
+    <div class="container maindiv">
+
+
+        
+        <form method="POST" action="{% url 'sin_up' %}" >
+            {% csrf_token %}
+            <ul class="form-style-1">
+                <h3 style="background: #0082e6; padding:12px;color:white;">REGISTRATION FORM</h3>
+                {% if error %}
+                <h5 style="color: red;">{{ error }}</h5>
+                {% endif %} 
+                <h4></h4>    
+                <h5>Personal Information</h5>                          
+                    <li><label>Name <span class="required">*</span></label><input type="text" name="first_name" class="field-divided" placeholder="First" maxlength="15" /> <input type="text" name="last_name" class="field-divided" placeholder="Last" maxlength="15" /></li>
+                        <li>
+                            <label>Email <span class="required">*</span></label>
+                            <input type="email" name="email" class="field-long" placeholder="Enter Your Email Address" maxlength="25" />
+                        </li>
+                        <li>
+                            <label>MOBILE <span class="required">*</span></label>
+                            {{rows.phone}}
+                        </li>                 
+                <li>
+                <hr style="border: 1px solid red;">
+                <h5>Office Information</h5>
+
+                <li>
+                    <label>DEPARTMENT <span class="required">*</span></label>
+                    {{rows.department}}
+                </li>
+                <li>
+                    <label>Category <span class="required">*</span></label>
+                    {{rows.catagory}}
+                </li>
+                
+                <hr style="border: 1px solid red;">
+                <h5>User Information</h5>
+
+                <li>
+                    <label>USER NAME <span class="required">*</span></label>
+                    <input type="text" name="username" class="field-long" maxlength="20" placeholder="User Name"/>
+                </li>
+                <li>
+                    <label>PASSWORD <span class="required">*</span></label>
+                    <input type="password" name="password" class="field-long"  maxlength="15" placeholder="Enter your password"/>
+                </li>
+                <li>
+                    <label>CONFIRM PASSWORD <span class="required">*</span></label>
+                    <input type="password" name="passwordagain" class="field-long" maxlength="15" placeholder="Enter confirm password"/>
+                </li>
+                <li>
+                    <input type="submit" value="Submit" />
+                </li>
+            </ul>
+            </form >
+    </div>
+
+{% endblock content %}
